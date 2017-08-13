@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', 'TestController@index')->middleware('LoginCheck');
+Route::get('/login', 'UserController@login');
+Route::post('/postLogin', 'UserController@postLogin');
